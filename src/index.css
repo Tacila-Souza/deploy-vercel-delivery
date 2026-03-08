@@ -1,0 +1,60 @@
+/* Importação da Fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import "tailwindcss";
+
+/* 3. Configuração do Tema (Cores e Fontes do Design) */
+@theme {
+  /* Fonte Principal */
+  --font-roboto: "Roboto", sans-serif;
+  
+  /* Paleta de Cores FoodFlow */
+  --color-food-orange: #D35400;      /* Laranja Principal */
+  --color-food-dark: #1A120B;        /* Fundo Sidebar/Escuro */
+  --color-health-green: #2E7D32;     /* Texto Saudável */
+  --color-health-bg: #E8F5E9;        /* Fundo Badge Saudável */
+  --color-warning-yellow: #EF6C00;   /* Texto Moderado */
+  --color-danger-red: #C62828;       /* Texto Pouco Saudável */
+  --color-bg-gray: #F8F9FA;          /* Fundo das Páginas */
+}
+
+/* 4. Resets Globais e Estilos de Base */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    /* Aplica a fonte Roboto e o fundo cinza claro por padrão */
+    font-family: var(--font-roboto);
+    background-color: var(--color-bg-gray);
+    color: #1a1a1a;
+
+    display: block !important;
+    margin: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  /* Ajuste para que links não tenham o azul padrão do navegador */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Garante que botões não herdem estilos estranhos do navegador */
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
+
+/* 5. Utilitários Customizados (Opcional) */
+@layer utilities {
+  .transition-standard {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
